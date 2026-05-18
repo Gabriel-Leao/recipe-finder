@@ -2,6 +2,8 @@ import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { Nunito, Nunito_Sans } from 'next/font/google'
 
+import { Navbar } from '@/components/navbar'
+
 import './globals.css'
 
 const nunitoSans = Nunito_Sans({
@@ -28,7 +30,10 @@ export default function RootLayout({
     <html
       lang='en'
       className={`${nunitoSans.variable} ${nunito.variable} h-full antialiased`}>
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   )
 }
